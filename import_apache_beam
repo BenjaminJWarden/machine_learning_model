@@ -1,0 +1,61 @@
+# Creating a Python virtual environment to run Apache Beam.
+# Set directory.
+
+$ cd Documents
+$ pwd
+# This will show the current working directory.
+
+$ mkdir Scripting
+# This will create a new directory within the directory you specified.
+$ cd Scripting
+$ pwd # Checking the working directory isn't necessary.
+# This changes the current working directory to Scripting.
+
+# You can check the version of Python that is installed on the machine.
+$ python --version
+$ pip --version
+# This will install a Python virtual environment.
+$ pip install --upgrade virtualenv
+
+# This will create a virtual environment.
+# You must have an active virtual environment before you install/run Apache Beam.
+$ . /Users/BenjaminJWarden/Documents/Scripting/bin/activate
+# This will activate your virtual environment.
+
+# Once your virtual environment is active, you can download and install Apache Beam.
+$ pip install apache-beam
+# NOTE: Ensure there is enough room on your machine to download the necessary developer tools.
+
+# From here, you will be able to begin building your data pipeline.
+# There are various plugins available for Apache Beam, including GCP and AWS.
+
+$ python -m apache_beam.examples.pythonscript --input /path/to/inputfile --output /path/to/write/counts
+# NOTE: Do not immediately run the script above.
+# You will need to specify a path to output the data to.
+
+
+# This will create a path to run/read the script from your Python doc,
+# write to an output source (again, specify the destination),
+# and use Spark Runner as the runner.
+$ python -m apache_beam.examples.wordcount --input /path/to/inputfile \
+                                         --output /path/to/write/counts \
+                                         --runner SparkRunner
+
+# It may also be beneficial to explore VIM as an alternative virtual environment.
+# Once configured, you can convert the terminal to a Python terminal by
+# using the following command.
+$ python 3.8
+# From here, you can import any/all necessary packages for programming in the
+# virtual environment using Python.
+>>> exit()
+# Close your Python environment and use Ruby.
+
+$ conda list
+# This will show the Anaconda packages currently installed on your machine.
+$ conda env list
+# This will list your Anaconda environments.
+
+$ jupyter notebook
+# This will launch Jupyter Notebook.
+# From here, you can call to the directory that you specified earlier (Scripting)
+# and then begin importing your Anaconda packages.
